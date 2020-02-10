@@ -1,0 +1,54 @@
+Musat Mihai-Robert-313CB
+TEMA 1 - POKER TOURNAMENT
+==============================================================================================================
+
+Pentru implementarea temei am folosit atat structurile ajutatoare prezente in scheletul de cod in headerul info.h,cat si o serie de 
+functii al caror antet este prezent in headerul functii.h si care simuleaza practic operatiile cu liste invatate.
+
+Dintre operatiile mai importante pe care le-am implementat asupra unei liste circulare amintesc :
+
+1)addLC-adaugarea unui element de tip void* la o lista circulara dupa un anumit pointer p (sau la inceput de lista daca p este null),functie care are un comportament generic si am folosit-o in continuare ca sa adaug un jucator la lista.
+
+2)deleteLC-stergerea elementelor dintr-o lista generica circulara dupa un anumit pointer p,care,analog functiei anterioare am folosit-o ca sa 
+sterg de la o masa un jucator cu un nume dat.
+
+3)turaLC-invartirea listei circulare in sensul acelor de ceasornic si decrementarea tuturor elementelor sale cu ajutorul functiei decLC,operatie
+necesara pentru implementarea functiei turaS (functiei tura descrisa in enunt).
+
+4)deleteLCf-stergerea elementelor listei circulare cu o anumita proprietate (pentru care f intoarce 1) deoarece eu voi avea nevoie sa elimin de 
+la masa(lista circulara) un jucator care va avea numarul de maini negativ.
+
+5)dezalocLC-eliberarea memoriei pentru o lista circulara generica.
+
+6)addOrdLC-adaugarea ordonata a unui jucator la o lista circulara simplu inlantuita,functie cu ajutorul careia pot sa adaug un jucator la masa in functie de anumite conditii. 
+
+7)ordLC-sortare a unei liste circulare,practic o sortare circulare a unei mese in functie numarul de maini ale jucatorilor si in caz de egalitate dupa nume (lexicografic).
+
+8)printMasa-functie care afiseaza situatia curenta a unei mese: fiecare jucator cu numele si numarul de maini corespunzator.
+
+9)copyLC-copiaza structura listei generice l1 in lista l2.
+
+Toate aceste functii imi permit sa fac modificarile necesare asupra meselor,liste circulare simplu inlantuite cu santinela,dar si asupra elementelor sale,structuri tip jucator.Eu am acum nevoie sa accesez fiecare masa din lista de mese care fac parte dintr-o sala,o lista simplu inlantuita generica fara santinela.Operatiile de adaugare a unui nou element,stergerea unor elemente dupa o anumita pozitie si dezalocarea listei se pastreaza,iar la acestea se mai adauga :
+
+10)deleteLSm-stergerea unei mese din sala cu un anumit nume,operatie folositoare daca,de exemplu vreau sa distribui jucatorii din sala la alte mese care au un numar suficient de mic de jucatori.
+
+11)deleteNull-stergerea unei mese care ramane fara jucatori.
+
+12)initS-aloca spatiul necesar pentru sala si campurile corespunzatoare descrise in headerul info.h.
+
+13)addSalaMasa-operatie de inserare a unui element de tip masa (lista circulara) intr-o lista de sali (lista simplu inlantuita).
+
+Functiile printSala,noroc,turaS,turaToataSala,clasamentSala corespund operatiilor print,noroc,tura,tura_completa,clasament asa cum sunt descrise in enunt.O observatie relativ usor de facut este ca nu este nevoie sa implementez o alta functie pentru operatia ghinion din enunt 
+deoarece este ca si cum as aduna -noro la apelarea functiei noroc,cu mentiunea ca trebuie sa am grija cand numarul de maini devine negativ sa
+scot jucatorul de la masa.
+
+Functii auxiliare mai sunt cele care determina numarul de locuri libere in sala (nrLibereS) si cea care distribuie elementele unei liste circulare generice (masa) in sala s,prin care eu pot la orice moment de timp sa stiu ce operatii aplic asupra unei mese (ce poate fi cautata dupa numele cu ajutorul functiei cautaM).
+
+
+
+ 
+
+
+
+
+
